@@ -23,7 +23,7 @@ class CertificationPerformance:
         :return: None
         """
         try:
-            with open(self.input_path, encoding="utf8", mode="r") as file:
+            with open(self.input_path, mode="r") as file:
                 headers = file.readline().split(";")
                 status_idx = soc_name_idx = state_idx = 0
                 for idx, column_name in enumerate(headers):
