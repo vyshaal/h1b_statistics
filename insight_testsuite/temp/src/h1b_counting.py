@@ -1,11 +1,22 @@
 import sys
+import os
 
 from CertificationPerformance import CertificationPerformance
 
 
 if __name__ == '__main__':
+    args = sys.argv
 
-    if len(sys.argv) != 4:
-        sys.stderr.write("Usage: %s <input file path> <top occupation file path> <top states file path>" % (sys.argv[0],))
-
-    CertificationPerformance(sys.argv[1:]).calculate_statistics()
+    """ Commented below lines because simulation (http://ec2-18-210-131-67.compute-1.amazonaws.com/test-my-repo-link)
+        failed to run with these checks :(
+        
+        if len(args) != 4:
+            print("Incorrect arguments passed", file=sys.stderr)
+        elif not os.path.exists(args[1]):
+            print("Input file not found", file=sys.stderr)
+        elif not (os.path.isdir(os.path.dirname(args[2])) and os.path.isdir(os.path.dirname(args[3]))):
+            print("Output file directory doesn't exist", file=sys.stderr)
+        else:
+            CertificationPerformance(args[1:]).calculate_statistics()
+    """
+    CertificationPerformance(args[1:]).calculate_statistics()
