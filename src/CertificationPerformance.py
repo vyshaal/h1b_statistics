@@ -49,8 +49,7 @@ class CertificationPerformance:
                                    criteria="TOP_STATES")
 
         except Exception as error:
-            print(error)
-            # print(error, file=sys.stderr)
+            print(error, file=sys.stderr)
 
     def write_results(self, write_file, sorted_list, **kwargs):
         """
